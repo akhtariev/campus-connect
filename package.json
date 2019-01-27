@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-loader": "^8.0.5",
+    "babel-loader": "8.0.4",
     "firebase": "^5.8.1",
     "google-maps-react": "^2.0.2",
     "react": "^16.7.0",

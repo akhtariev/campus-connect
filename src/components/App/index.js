@@ -6,7 +6,7 @@ import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
 // import HomePage from '../Home/index';
-import Home from '../Home/Home'
+import Home from '../Home/index';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import { withFirebase } from '../Firebase';

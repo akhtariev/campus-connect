@@ -303,7 +303,7 @@ class Home extends Component {
 
                     <Marker onClick={this.onMarkerClick}
                             position={{lat: 49.255050, lng: -123.236881}}
-                            name={'Wesbrook Village'} />
+                            name={'Wesbrook'} />
 
                     <Marker onClick={this.onMarkerClick}
                             position={{lat: 49.2616552, lng: -123.2443197}}

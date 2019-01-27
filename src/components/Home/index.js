@@ -3,16 +3,12 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 import { withAuthorization } from '../Session';
 import Home from './Home';
+import "./index.css"
 
 const HomePage = () => {
     return (
-        <div className="container">
-            <BrowserRouter>
-                <div>
-                    <Route exact path="/" component={Home}/>
-                </div>
-            </BrowserRouter>
-        </div>);
+        <Home />
+        );
 };
 
 const condition = authUser => !!authUser;

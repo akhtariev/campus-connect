@@ -57,6 +57,10 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
+      
+      <div className="signin">
+      
+
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
@@ -78,6 +82,11 @@ class SignInFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
+      <div className="overlay">
+      </div>
+      </div>
+      
+      
     );
   }
 }
