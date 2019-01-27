@@ -4,14 +4,11 @@ div#root{
 }
 
 
-div .homeoverlay {
-    width: 100%;
-    height: 100%;
-}
 
 div.container {
-    width: 100%;
-    height: 1022px;
+    /* width: 100%; */
+    /* height: 1022px; */
+    /* background-color: rgba(91,131,141,0.8); */
 }
 
 .map {
@@ -25,12 +22,19 @@ div.container {
     outline: none;
     box-shadow: none;
     position: relative;
-    /* border: none; */
     top: 475px;
     left: 5px;
     z-index: 1;
-    /* opacity: 0.8; */
-    /* background-color: rgba(49,65,91,0.8); */
     background-color: rgb(49, 65, 91);
+    opacity: 0.8;
     color: white;
+}
+
+#eventtoggle:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+div.map {
+    width: 70%;
 }

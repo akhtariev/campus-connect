@@ -263,16 +263,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div style={{
-                position: 'absolute',
-                margin: 'auto',
-                top: 30,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                width: 900,
-                height: 500,
-            }}>
+            <div class="homediv">
                 <form onSubmit = {this.onCreateSubmit}>
                     <span className="input-group-btn">
                         <button type="submit" className="btn btn-secondary" id="eventtoggle">Create Event</button>
