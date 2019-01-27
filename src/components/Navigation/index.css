@@ -27,3 +27,9 @@
     height: 58px;
     top: 0;
 }  
+
+#signoutbutton {
+    float: right;
+    margin-right: 50px;
+    opacity: 0.7;
+}

@@ -275,7 +275,7 @@ class Home extends Component {
             }}>
                 <form onSubmit = {this.onCreateSubmit}>
                     <span className="input-group-btn">
-                        <button type="submit" className="btn btn-secondary">Event Creation Toggle</button>
+                        <button type="submit" className="btn btn-secondary" id="eventtoggle">Create Event</button>
                     </span>
                 </form>
                 <Map 
