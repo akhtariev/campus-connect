@@ -326,10 +326,19 @@ class Home extends Component {
 
     render() {
         return (
-            <div class="homediv">
+            <div style={{
+                position: 'absolute',
+                margin: 'auto',
+                top: 30,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                width: 900,
+                height: 500,
+            }}>
                 <form onSubmit = {this.onCreateSubmit}>
                     <span className="input-group-btn">
-                        <button type="submit" className="btn btn-secondary" id="eventtoggle">Create Event</button>
+                        <button type="submit" id="eventtoggle">Create Event</button>
                     </span>
                 </form>
                 <Map 
@@ -375,8 +384,7 @@ class Home extends Component {
                     
                 </Map>
                 <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
-                <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
-                <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
+                <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
                 {this.renderFormOrTable()}
             </div>
         );
