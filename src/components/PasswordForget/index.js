@@ -61,7 +61,7 @@ class PasswordForgetFormBase extends Component {
           placeholder="Email Address"
         />
         <button disabled={isInvalid} type="submit">
-          Reset My Password
+          Send Me My Password
         </button>
 
         {error && <p>{error.message}</p>}

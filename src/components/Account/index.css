@@ -1,0 +1,70 @@
+
+div.account .forgot form {
+    position: absolute;
+    top: 110px;
+    right: 175px;
+}
+
+div.account .passchange form {
+    position: absolute;
+    top: 180px;
+    right: 175px;
+}
+
+div.account .passchange form button{
+    position: relative;
+    right: -525px;
+    height: 50px;
+    top: -60px;
+}
+
+.passchange input,select,textarea {
+    height: 50px;
+    display: block;
+    margin-top: 10px;
+    width:500px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+    opacity: 0.3;
+    text-indent: 10px;
+    color: rgba(0,0,0,0.5);
+    font-size: 13px;
+  }
+  
+  
+  .passchange input::-webkit-input-placeholder{
+    color: rgba(0,0,0,0.5);
+    }
+  
+  .passchange form {
+    float: right;
+    /* margin-right: 50px; */
+    /* margin-top: -65px; */
+  }
+  
+  .passchange input::-webkit-input-placeholder{
+    color: black;
+  }
+  
+  
+  .passchange button {
+    position: absolute;
+    right: 50px;
+    margin-top: 10px;
+    opacity: 0.3;
+    width: 125px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .passchange button:hover {
+    opacity: 0.5;
+    transition: 0.4s;
+    z-index: 1;
+  }
+  
+  .passchange button:active {
+    box-shadow: 1px 1px black;
+  }
+  
