@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fire from '../../fire';
 
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import './index.css';
 
 
 const RADIUS = 500;
@@ -337,7 +338,7 @@ class Home extends Component {
             }}>
                 <form onSubmit = {this.onCreateSubmit}>
                     <span className="input-group-btn">
-                        <button type="submit" className="btn btn-secondary">Event Creation Toggle</button>
+                        <button type="submit" className="btn btn-secondary" id="eventtoggle">Create Event</button>
                     </span>
                 </form>
                 <Map 
@@ -348,6 +349,7 @@ class Home extends Component {
                         lng: -123.2460
                     }}
                     zoom={14}
+                    className = "map"
                     onClick={this.onMapClicked}>
 
                     {/* {this.renderMarkers()} */}

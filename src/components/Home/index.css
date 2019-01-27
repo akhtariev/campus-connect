@@ -1,0 +1,36 @@
+div#root{
+    height: 100%;
+    width: 100%;
+}
+
+
+div .homeoverlay {
+    width: 100%;
+    height: 100%;
+}
+
+div.container {
+    width: 100%;
+    height: 1022px;
+}
+
+.map {
+    width: 50px;
+}
+
+#eventtoggle{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+    position: relative;
+    /* border: none; */
+    top: 475px;
+    left: 5px;
+    z-index: 1;
+    /* opacity: 0.8; */
+    /* background-color: rgba(49,65,91,0.8); */
+    background-color: rgb(49, 65, 91);
+    color: white;
+}

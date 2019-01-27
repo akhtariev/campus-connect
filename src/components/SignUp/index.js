@@ -3,10 +3,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import './index.css';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h1 id="signup">Sign Up</h1>
     <SignUpForm />
   </div>
 );
@@ -72,6 +73,9 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
+      <div className="signup">
+      <div className="overlay">
+      </div>
       <form onSubmit={this.onSubmit}>
           <input
           name="username"
@@ -105,6 +109,7 @@ class SignUpFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
+      </div>
     );
   }
 }
