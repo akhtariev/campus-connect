@@ -1,13 +1,19 @@
 import React from 'react';
-
+import { BrowserRouter, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 import { withAuthorization } from '../Session';
+import Home from './Home';
 
-const HomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
-  </div>
-);
+const HomePage = () => {
+    return (
+        <div className="container">
+            <BrowserRouter>
+                <div>
+                    <Route exact path="/" component={Home}/>
+                </div>
+            </BrowserRouter>
+        </div>);
+};
 
 const condition = authUser => !!authUser;
 

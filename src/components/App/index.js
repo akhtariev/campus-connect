@@ -5,7 +5,8 @@ import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
-import HomePage from '../Home';
+// import HomePage from '../Home/index';
+import Home from '../Home/Home'
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import { withFirebase } from '../Firebase';
@@ -19,6 +20,7 @@ const App = () => (
 
       <hr />
 
+        <div className="container">
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -26,9 +28,10 @@ const App = () => (
         path={ROUTES.PASSWORD_FORGET}
         component={PasswordForgetPage}
       />
-      <Route path={ROUTES.HOME} component={HomePage} />
+      <Route path={ROUTES.HOME} component={Home} />
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
+        </div>
     </div>
   </Router>
 );
