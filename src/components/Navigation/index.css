@@ -22,5 +22,7 @@
     background-color: rgb(49, 65, 91);
     padding: 1px;
     color: white;
+    position: fixed;
+    width: 100%;
     
 }  

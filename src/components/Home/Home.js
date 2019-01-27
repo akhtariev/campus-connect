@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import './index.css';
 
 
 const RADIUS = 500;
@@ -285,6 +286,7 @@ class Home extends Component {
                         lng: -123.2460
                     }}
                     zoom={14}
+                    className = "map"
                     onClick={this.onMapClicked}>
 
                     {/* {this.renderMarkers()} */}
