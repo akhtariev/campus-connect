@@ -6,7 +6,7 @@
 
 
 .nav a {
-    transition: color 0.5s ease, border-bottom 0.5s ease;
+    transition: color 1s ease, border-bottom 1s ease;
     color: white;
     text-decoration: none;
     border-bottom: 1px solid rgb(49, 65, 91); 
