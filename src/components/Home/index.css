@@ -1,0 +1,33 @@
+
+.cont {
+    height: 500px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: block;
+}
+
+.mapd {
+    margin-top: 100px;
+
+}
+
+#eventtoggle{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+    position: absolute;
+    top: 475px;
+    left: 250px;
+    z-index: 1;
+    background-color: rgb(49, 65, 91);
+    opacity: 0.8;
+    color: white;
+}
+
+#eventtoggle:hover{
+    opacity: 1;
+    transition: 0.5s;
+}

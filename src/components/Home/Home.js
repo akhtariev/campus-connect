@@ -59,6 +59,7 @@ class Home extends Component {
     }
 
     onMarkerClick = (props, marker, e) => {
+        console.log("hi");
         this.currLocation = marker.name;
 
         if (this.currLocation !== undefined && this.currLocation !== null) {
@@ -69,7 +70,7 @@ class Home extends Component {
 
 
                     // console.log(Object.values(snapshot.val()));
-
+                    this.locationMarkers[this.currLocation] = [];
                     for (let event of Object.values(snapshot.val())) {
                         let newEvent = {};
                         newEvent["organizer"] = event.organizer;
@@ -326,21 +327,16 @@ class Home extends Component {
 
     render() {
         return (
-            <div style={{
-                position: 'absolute',
-                margin: 'auto',
-                top: 30,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                width: 900,
-                height: 500,
-            }}>
-                <form onSubmit = {this.onCreateSubmit}>
-                    <span className="input-group-btn">
-                        <button type="submit" id="eventtoggle">Create Event</button>
-                    </span>
-                </form>
+            <div className="cont">
+
+                
+                
+                <div style={{
+                
+                    width: '100%',
+                     height: '100%',
+                     position: "relative",
+                }} className="mapd">
                 <Map 
                     google={this.props.google}
                     //style={style}
@@ -383,10 +379,16 @@ class Home extends Component {
                    </InfoWindow>
                     
                 </Map>
-                <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
-                <div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>
+                </div>
+
+                <form onSubmit = {this.onCreateSubmit}>
+                    <span className="input-group-btn">
+                        <button type="submit" id="eventtoggle">Create Event</button>
+                    </span>
+                </form>
+                
                 {this.renderFormOrTable()}
-            </div>
+                </div>
         );
     }
 }
