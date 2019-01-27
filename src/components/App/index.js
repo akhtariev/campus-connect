@@ -18,7 +18,7 @@ const App = () => (
     <div>
       <Navigation />
 
-      <hr />
+      
 
         <div className="container">
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
