@@ -1,9 +1,8 @@
 import React from 'react';
+import SignIn from '../SignIn'
 
 const Landing = () => (
-  <div>
-    <h1>Landing</h1>
-  </div>
+  <SignIn />
 );
 
 export default Landing;
