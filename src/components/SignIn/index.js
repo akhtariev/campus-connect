@@ -13,7 +13,7 @@ const SignInPage = () => (
   <div className="overlay">
       </div>
   <div className="signin">
-    <h1>UBC Connect</h1>
+    <h1>Campus Connect</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
