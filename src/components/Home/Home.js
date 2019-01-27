@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fire from '../../fire';
 
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import './index.css';
@@ -25,12 +26,19 @@ class Home extends Component {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
-            eventOrg: '',
-            eventName: '',
-            eventCap: '',
+            organizer: '',
+            name: '',
+            capacity: '',
             create: false,
             location: false,
-            successMsg: ''
+            successMsg: '',
+            locationMarkers: {
+                "Nest": [],
+                "Wesbrook": [],
+                "UBC Village": [],
+                "Thunderbird": [],
+                "ICICS": []
+            }
         };
 
         this.locationMarkers = {
@@ -53,13 +61,35 @@ class Home extends Component {
     onMarkerClick = (props, marker, e) => {
         this.currLocation = marker.name;
 
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true,
-            location: true,
-            successMsg: ''
-        });
+        if (this.currLocation !== undefined && this.currLocation !== null) {
+            let eventNameRef = fire.database().ref('events/' + this.currLocation + "/" + "events/");
+            console.log(eventNameRef);
+                eventNameRef.on('value', snapshot => {
+                    // console.log(snapshot.val());
+
+
+                    // console.log(Object.values(snapshot.val()));
+
+                    for (let event of Object.values(snapshot.val())) {
+                        let newEvent = {};
+                        newEvent["organizer"] = event.organizer;
+                        newEvent["name"] = event.name;
+                        newEvent["capacity"] = event.capacity;
+                        this.locationMarkers[this.currLocation].push(newEvent);
+                        console.log(this.locationMarkers);
+                    }
+                    this.setState({
+                        selectedPlace: props,
+                        activeMarker: marker,
+                        showingInfoWindow: true,
+                        location: true,
+                        successMsg: ''
+                    });
+
+                })
+        }
+
+
     };
 
     shouldMakeNewMarker(lat1, lat2, lon1, lon2) {
@@ -128,6 +158,7 @@ class Home extends Component {
 
         // this.props.eventsHandler(newEventMarkers[newEventMarkers.length - 1])
 
+        this.currLocation = null;
         if (this.state.showingInfoWindow) {
           this.setState({
             showingInfoWindow: false,
@@ -158,9 +189,31 @@ class Home extends Component {
             }
         }
     }
+    //
+    // organizer: this.state.organizer,
+    // name: this.state.name,
+    // capacity: this.state.capacity
+
+    // componentDidUpdate(){
+    //     if (this.currLocation !== undefined && this.currLocation !== null) {
+    //         let eventNameRef = fire.database().ref('events/' + this.currLocation + "/" + "events/");
+    //         eventNameRef.on('child_added', snapshot => {
+    //             let event = {};
+    //             event["organizer"] = snapshot.val().organizer;
+    //             event["name"] = snapshot.val().name;
+    //             event["capacity"] = snapshot.val().capacity;
+    //             this.locationMarkers[this.currLocation].push(event);
+    //             console.log(this.locationMarkers);
+    //
+    //
+    //             console.log(snapshot.val());
+    //         })
+    //     }
+    // }
+
 
     renderList() {
-        console.log(this.locationMarkers);
+        let one = 1;
         return (
             <table>
                 <thead>
@@ -182,17 +235,18 @@ class Home extends Component {
     }
 
     renderEvents() {
+        console.log(this.locationMarkers)
         return this.locationMarkers[this.currLocation].map( event => {
             return (
-                <tr id={event.eventName}>
+                <tr id={event.name}>
                     <td>
-                        {event.eventOrg}
+                        {event.organizer}
                     </td> 
                     <td>
-                        {event.eventName}
+                        {event.name}
                     </td>
                     <td>
-                        {event.eventCap} 
+                        {event.capacity}
                     </td>
                 </tr>
             )
@@ -209,19 +263,19 @@ class Home extends Component {
                         placeholder = 'Your Name'
                         className = "form-control"
                         value = {this.state.term}
-                        onChange = {event => this.setState({ eventOrg: event.target.value})} 
+                        onChange = {event => this.setState({ organizer: event.target.value})}
                     />
                     <input 
                         placeholder = 'Event Name'
                         className = "form-control"
                         value = {this.state.term}
-                        onChange = {event => this.setState({ eventName: event.target.value})} 
+                        onChange = {event => this.setState({ name: event.target.value})}
                     />
                     <input 
                         placeholder = 'Event Capacity'
                         className = "form-control"
                         value = {this.state.term}
-                        onChange = {event => this.setState({ eventCap: event.target.value})} 
+                        onChange = {event => this.setState({ capacity: event.target.value})}
                     />
                     <span className="input-group-btn">
                         <button type="submit" className="btn btn-secondary">Submit</button>
@@ -236,18 +290,27 @@ class Home extends Component {
 
         console.log(this.state);
 
-        this.locationMarkers[this.currLocation].push({
-            eventOrg: this.state.eventOrg,
-            eventName: this.state.eventName,
-            eventCap: this.state.eventCap
-        })
+        // this.locationMarkers[this.currLocation].push({
+        //     organizer: this.state.organizer,
+        //     name: this.state.name,
+        //     capacity: this.state.capacity
+        // })
+
+        let newEvent = {
+            organizer: this.state.organizer,
+                name: this.state.name,
+            capacity: this.state.capacity
+        }
+        fire.database().ref("events/" + this.currLocation + "/" + "events/").push(newEvent);
+
+
 
         console.log(this.locationMarkers);
 
         this.setState({ 
-            eventOrg: '',
-            eventName: '',
-            eventCap: '',
+            organizer: '',
+            name: '',
+            capacity: '',
             successMsg: 'Event successfully created'
         });
     }
