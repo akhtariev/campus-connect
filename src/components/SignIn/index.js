@@ -10,10 +10,14 @@ import './index.css';
 
 const SignInPage = () => (
   <div>
+  <div className="overlay">
+      </div>
+  <div className="signin">
     <h1>UBC Connect</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
+  </div>
   </div>
 );
 
@@ -58,8 +62,8 @@ class SignInFormBase extends Component {
 
     return (
       
-      <div className="signin">
       
+      <div>
 
       <form onSubmit={this.onSubmit}>
         <input
@@ -82,10 +86,8 @@ class SignInFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
-      <div className="overlay">
-      </div>
-      </div>
       
+      </div>
       
     );
   }

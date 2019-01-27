@@ -7,3 +7,67 @@
   background: url("./pharm2.jpg") repeat;
   z-index: -1;
 }
+
+.signin {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 30px;
+}
+
+.signin h1 {
+  color: white;
+  font-size: 80px;
+}
+
+.signin input,select,textarea {
+  height: 50px;
+  display: block;
+  margin-top: 10px;
+}
+
+.signin input::-webkit-input-placeholder{
+    color: black;
+  }
+
+.signin form {
+  /* position: absolute; */
+  float: right;
+
+}
+
+.signin input::-webkit-input-placeholder{
+  color: black;
+}
+
+
+.signin button {
+  position: absolute;
+  right: 50px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.signin button:hover {
+  opacity: 0.6;
+  transition: 0.4s;
+}
+
+
+.signin p {
+  opacity: 0.5;
+  margin-top: 25px;
+}
+
+
+.signin p:nth-of-type(1) {
+  position: absolute;
+  right: 150px;
+  top: 330px;
+}
+.signin p:nth-of-type(2) {
+  position: absolute;
+  right: 350px;
+  top: 330px;
+}
+
