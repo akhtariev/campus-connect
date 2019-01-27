@@ -29,6 +29,7 @@ class Home extends Component {
             organizer: '',
             name: '',
             capacity: '',
+            description: '',
             create: false,
             location: false,
             successMsg: '',
@@ -76,6 +77,8 @@ class Home extends Component {
                         newEvent["organizer"] = event.organizer;
                         newEvent["name"] = event.name;
                         newEvent["capacity"] = event.capacity;
+                        newEvent["count"] = event.count;
+                        newEvent["description"] = event.description;
                         this.locationMarkers[this.currLocation].push(newEvent);
                         console.log(this.locationMarkers);
                     }
@@ -216,6 +219,7 @@ class Home extends Component {
     renderList() {
         let one = 1;
         return (
+            <div className="tableh">
             <table>
                 <thead>
                     <td>
@@ -227,11 +231,19 @@ class Home extends Component {
                     <td>
                         Capacity
                     </td>
+
+                    <td>
+                        # Attending 
+                    </td>
+                    <td>
+                        Description
+                    </td>
                 </thead>
                 <tbody>
                     {this.renderEvents()}
                 </tbody>
             </table>
+            </div>
         )
     }
 
@@ -249,6 +261,14 @@ class Home extends Component {
                     <td>
                         {event.capacity}
                     </td>
+
+                    <td>
+                        {event.count}
+                    </td>
+
+                    <td>
+                        {event.description}
+                    </td>
                 </tr>
             )
         })
@@ -259,7 +279,7 @@ class Home extends Component {
         return (
             <div style={{position: "relative"}}>
                 <div>{this.state.successMsg}</div>
-                <form onSubmit={this.onFormSubmit}>
+                <form onSubmit={this.onFormSubmit} id="event_form">
                     <input 
                         placeholder = 'Your Name'
                         className = "form-control"
@@ -277,6 +297,13 @@ class Home extends Component {
                         className = "form-control"
                         value = {this.state.term}
                         onChange = {event => this.setState({ capacity: event.target.value})}
+                    />
+
+                    <input 
+                        placeholder = 'Description'
+                        className = "form-control"
+                        value = {this.state.term}
+                        onChange = {event => this.setState({ description: event.target.value})}
                     />
                     <span className="input-group-btn">
                         <button type="submit" className="btn btn-secondary">Submit</button>
@@ -300,7 +327,9 @@ class Home extends Component {
         let newEvent = {
             organizer: this.state.organizer,
                 name: this.state.name,
-            capacity: this.state.capacity
+            capacity: this.state.capacity,
+            count: 1, 
+            description: this.state.description
         }
         fire.database().ref("events/" + this.currLocation + "/" + "events/").push(newEvent);
 
@@ -312,6 +341,7 @@ class Home extends Component {
             organizer: '',
             name: '',
             capacity: '',
+            description: '',
             successMsg: 'Event successfully created'
         });
     }
@@ -327,6 +357,7 @@ class Home extends Component {
 
     render() {
         return (
+            <div>
             <div className="cont">
 
                 
@@ -374,20 +405,26 @@ class Home extends Component {
                        marker={this.state.activeMarker}
                        visible={this.state.showingInfoWindow}>
                        <div>
-                           <h1>{this.state.selectedPlace.name}</h1>
+                           <h1 id="infoW">{this.state.selectedPlace.name}</h1>
                        </div>
                    </InfoWindow>
                     
                 </Map>
                 </div>
-
+                
+                
+                </div>
+                    
+                    <div className="bot">
                 <form onSubmit = {this.onCreateSubmit}>
                     <span className="input-group-btn">
                         <button type="submit" id="eventtoggle">Create Event</button>
                     </span>
                 </form>
-                
-                {this.renderFormOrTable()}
+
+                        {this.renderFormOrTable()}
+
+                        </div>
                 </div>
         );
     }
