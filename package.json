@@ -5,6 +5,7 @@
   "dependencies": {
     "babel-loader": "8.0.4",
     "firebase": "^5.8.1",
+    "firebase-tools": "^6.3.0",
     "google-maps-react": "^2.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
