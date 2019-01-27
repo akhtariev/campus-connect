@@ -72,9 +72,7 @@
   }
   
   div #signup {
-      /* float: right;
-      margin-right: 50px; */
-      color: white;
+    color: white;
     font-size: 80px;
     margin-top: 0px;
     opacity: 0.5;

@@ -73,7 +73,7 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <div class="signup">
+      <div className="signup">
       <div className="overlay">
       </div>
       <form onSubmit={this.onSubmit}>
