@@ -10,7 +10,7 @@ import './index.css';
 
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <h1>UBC Connect</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />

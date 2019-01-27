@@ -1,6 +1,7 @@
 body {
     /* background-color: black; */
     margin: 0;
+    margin-top: -10px;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -28,7 +29,7 @@ body {
   }
   
   
-  div.landing h1 {
+  div h1 {
     /* color: rgba(239,254,231); */
     color: white;
     font-size: 100px;
@@ -43,7 +44,7 @@ body {
     padding-bottom: none;
   }
   
-  div.landing form {
+  div form {
     /* position: absolute; */
     margin-top: 200px;
     float: right;
@@ -51,7 +52,7 @@ body {
     
   }
   
-  div.landing input,select,textarea {
+  div input,select,textarea {
     height: 50px;
     display: block;
     margin-top: 10px;
@@ -68,11 +69,11 @@ body {
     /* right: */
   }
   
-  div.landing input::-webkit-input-placeholder{
+  div input::-webkit-input-placeholder{
     color: black;
   }
   
-  div.landing button {
+  div button {
     position: absolute;
     right: 50px;
     margin-top: 10px;
@@ -83,34 +84,30 @@ body {
     opacity: 0.5;
   }
   
-  div.landing button:hover {
+  div button:hover {
     opacity: 0.6;
     transition: 0.4s;
   }
   
   
-  div.landing p {
-    
-    /* margin-top: 350px; */
-    /* position: absolute; */
-    /* float: right; */
-    /* margin-left: 50px; */
+  div p {
     opacity: 0.5;
+    margin-top: 25px;
   }
   
   
-  div.landing p:nth-of-type(1) {
+  div p:nth-of-type(1) {
     position: absolute;
     right: 150px;
     top: 330px;
   }
   
-  div.landing p:nth-of-type(2) {
+  div p:nth-of-type(2) {
     position: absolute;
     right: 350px;
     top: 330px;
   }
   
-  div.landing a{
+  div a{
     color: black;
   }
