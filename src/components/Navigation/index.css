@@ -1,0 +1,26 @@
+.nav li {
+    display: inline;
+    margin-left: 10px;
+    
+}
+
+
+.nav a {
+    transition: color 0.5s ease, border-bottom 0.5s ease;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(49, 65, 91); 
+}
+
+.nav a:hover {
+    color: rgb(177, 193, 199); 
+    border-color: rgb(177, 193, 199); 
+}
+
+
+.nav {
+    background-color: rgb(49, 65, 91);
+    padding: 2px;
+    color: white;
+    
+}  

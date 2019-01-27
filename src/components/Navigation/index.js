@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut'
 import * as ROUTES from '../../constants/routes';
+import './index.css';
 
 
 const Navigation = () =>  (
@@ -15,23 +16,22 @@ const Navigation = () =>  (
 
 
 const NavigationAuth = () => (
+  <div className="nav">
   <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
+    <li className="navli">
       <Link to={ROUTES.HOME}>Home</Link>
     </li>
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </li>
-    <li>
+    <li className="navli">
       <Link to={ROUTES.ADMIN}>Admin</Link>
     </li>
-    <li>
+    <li className="navli">
       <SignOutButton />
     </li>
   </ul>
+  </div>
 );
 
 const NavigationNonAuth = () => {
